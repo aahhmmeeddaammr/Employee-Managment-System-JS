@@ -1,0 +1,30 @@
+
+/* Modal Image Input */
+
+.Image-Container{
+    width: 200px; 
+    height: 200px; 
+    font-size: 100px;
+}
+
+
+
+
+.Employees-Container {
+    overflow-x: scroll;
+}
+
+
+#UpdateBtn{
+    display: none;
+}
+
+
+#UserPhoto{
+    display: none;
+}
+
+
+.invalidimage{
+    border: red !important;
+}
