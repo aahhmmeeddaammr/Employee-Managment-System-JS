@@ -1,6 +1,7 @@
 // ======================== /\/\ ** Global Variables ** /\/\ ========================
 
 var selectedEmployeeToUpdate = 0;
+var selectedEmployeeToUpdateImagePath = "";
 
 
 // ======================== /\/\ ** HTML Elements ** /\/\ ========================
@@ -115,6 +116,7 @@ function Delete(index) {
 // ======================== /\/\** Show Update Form To Update  **/\/\ ========================
 
 function showUpdateForm(index) {
+  selectedEmployeeToUpdateImagePath = employees[index].imagePathName
   userIcon.style.display = "none";
   userPhoto.style.display = "block";
   userPhoto.setAttribute("src",`./Images/${employees[index].imagePathName}`)
@@ -134,7 +136,7 @@ function showUpdateForm(index) {
 
 function update() {
   employees[selectedEmployeeToUpdate] = createEmplyee(
-    profileImageInput.files[0]?.name,
+    profileImageInput.files[0]?.name?profileImageInput.files[0]?.name:selectedEmployeeToUpdateImagePath,
     nameInput.value,
     ageInput.value,
     cityInput.value,
@@ -363,6 +365,4 @@ searchSelection.addEventListener("change" , (e)=>{
     searchInput.setAttribute("disabled" )
 
   }
-})
-// ======================== /\/\** Create **/\/\ ========================
-  
+})  
